@@ -165,7 +165,7 @@ npm run test:coverage
 
 ## 8. Prompts Used to Complete the Challenge
 
-elow are the prompts used with GitHub Copilot (@workspace agent mode) to generate the full-stack calculator solution, prioritizing maintainable code, testable architecture, and deployment compatibility.
+Below are the prompts used with GitHub Copilot (@workspace agent mode) to generate the full-stack calculator solution, prioritizing maintainable code, testable architecture, and deployment compatibility.
 
 ### Phase 1: Go Backend (Microservice)
 **Prompt 1: Scaffolding and Architecture**
