@@ -1,0 +1,26 @@
+mode: set
+backend/internal/service/calculator.go:16.48,18.2 1 1
+backend/internal/service/calculator.go:20.111,21.19 1 1
+backend/internal/service/calculator.go:22.13,23.22 1 1
+backend/internal/service/calculator.go:23.22,25.4 1 1
+backend/internal/service/calculator.go:26.3,26.35 1 1
+backend/internal/service/calculator.go:27.18,28.22 1 1
+backend/internal/service/calculator.go:28.22,30.4 1 1
+backend/internal/service/calculator.go:31.3,31.35 1 1
+backend/internal/service/calculator.go:32.18,33.22 1 1
+backend/internal/service/calculator.go:33.22,35.4 1 1
+backend/internal/service/calculator.go:36.3,36.35 1 1
+backend/internal/service/calculator.go:37.16,38.22 1 1
+backend/internal/service/calculator.go:38.22,40.4 1 1
+backend/internal/service/calculator.go:41.3,41.21 1 1
+backend/internal/service/calculator.go:41.21,43.4 1 1
+backend/internal/service/calculator.go:44.3,44.35 1 1
+backend/internal/service/calculator.go:45.15,46.22 1 1
+backend/internal/service/calculator.go:46.22,48.4 1 1
+backend/internal/service/calculator.go:49.3,49.44 1 1
+backend/internal/service/calculator.go:50.14,51.22 1 1
+backend/internal/service/calculator.go:51.22,53.4 1 1
+backend/internal/service/calculator.go:54.3,54.19 1 1
+backend/internal/service/calculator.go:54.19,56.4 1 1
+backend/internal/service/calculator.go:57.3,57.34 1 1
+backend/internal/service/calculator.go:58.10,59.32 1 1

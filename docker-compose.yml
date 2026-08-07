@@ -1,0 +1,30 @@
+services:
+  backend:
+    platform: linux/amd64
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: sezzle-backend
+    ports:
+      - "8080:8080"
+    networks:
+      - sezzle-network
+
+  frontend:
+    platform: linux/amd64
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+      args:
+        VITE_API_BASE_URL: /api
+    container_name: sezzle-frontend
+    depends_on:
+      - backend
+    ports:
+      - "5173:80"
+    networks:
+      - sezzle-network
+
+networks:
+  sezzle-network:
+    driver: bridge
