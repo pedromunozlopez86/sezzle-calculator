@@ -165,31 +165,31 @@ npm run test:coverage
 
 ## 8. Prompts Used to Complete the Challenge
 
-Below is a summary of the main prompts used during implementation:
+elow are the prompts used with GitHub Copilot (@workspace agent mode) to generate the full-stack calculator solution, prioritizing maintainable code, testable architecture, and deployment compatibility.
 
-1. Create base Go backend
-- "Act as an expert Go Software Engineer. Create the base structure for a REST microservice in /backend... endpoint /calculate... strict schema validation... controller and domain service separation... graceful shutdown."
+### Phase 1: Go Backend (Microservice)
+**Prompt 1: Scaffolding and Architecture**
+@workspace Act as an expert Go Software Engineer. Create the base structure for a REST microservice in the `/backend` directory. Implement a standard HTTP server with a `/calculate` endpoint. The endpoint should receive a JSON with `operation` (add, subtract, multiply, divide), `operand1`, and `operand2` (float64). Implement strict separation of concerns following Domain-Driven Design principles: a controller for the HTTP layer, and an isolated domain service for the arithmetic logic. Ensure to include strict schema validation, explicit error handling, and graceful shutdown.
 
-2. Verify Go installation
-- "I already installed Go, check it."
+**Prompt 2: Edge Cases and Unit Testing**
+@workspace Based on the arithmetic logic in the backend, generate comprehensive unit tests in Go using the `testing` package. I need 100% coverage in the domain service. Explicitly test edge cases like division by zero, missing operands, and unsupported operations. The system must return a clear error that translates into an HTTP 400 Bad Request.
 
-3. Backend unit tests
-- "Based on the arithmetic logic you created, generate exhaustive Go unit tests... 100% coverage in the domain service..."
+### Phase 2: React Frontend (Vite + TS)
+**Prompt 3: Scaffolding and API Connection**
+@workspace Create the frontend application in the `/frontend` directory using Vite, React, and TypeScript. Configure an HTTP client service to communicate with the backend. Ensure the API integration layer (services) is isolated from the React visual components layer. Keep dependencies to a minimum to optimize memory usage in the development environment.
 
-4. Create frontend
-- "Create the frontend app in /frontend using Vite, React, and TypeScript... isolate API integration from React visual components..."
+**Prompt 4: User Interface and Error Handling**
+@workspace Implement the calculator UI. The design must be responsive, intuitive, and handle loading states. Add input validation on numeric fields before sending the request to the backend. If the backend returns an error (e.g., division by zero), catch the exception and display a clear, user-friendly notification. Use a modular design.
 
-5. Implement modular UI and validations
-- "Implement calculator UI... responsive, intuitive, loading states, client-side input validation, backend error handling... modular layout for buttons and result display..."
+**Prompt 5: Frontend Testing**
+@workspace Generate unit tests for the frontend using Vitest and React Testing Library. Focus on testing that the component renders correctly, that input validations work on the client-side, and that error states are displayed when the API fails (mock the API response).
 
-6. Frontend unit tests
-- "Generate frontend unit tests with Vitest and React Testing Library... cover rendering, client validation, and API error states with mocks..."
+### Phase 3: Orchestration and Deployment (Cross-platform optimized)
+**Prompt 6: Multi-Architecture Dockerization**
+@workspace Generate a multi-stage `Dockerfile` for the Go backend, and another multi-stage `Dockerfile` for the frontend (using Nginx to serve static files). Since I develop on Apple Silicon (ARM64), you must force the `--platform=linux/amd64` flag in the base images or ensure they are architecture-agnostic, so the reviewer can run everything on Intel/Windows without issues. Use lightweight `alpine` images to avoid overloading the host RAM. Then, create a `docker-compose.yml` that orchestrates both services and maps ports to localhost.
 
-7. Containerization
-- "Generate multi-stage Dockerfiles for backend and frontend (Nginx), and docker-compose.yml to run both services..."
-
-8. Cross-architecture Docker compatibility
-- "Add --platform=linux/amd64 to base images and ensure alpine-based images for minimal footprint..."
+**Prompt 7: Documentation and README**
+@workspace Create a comprehensive `README.md` file in the root of the project. It must include: step-by-step instructions to run locally with Docker Compose (mentioning cross-platform compatibility), a table with JSON request/response examples for the API, commands to run the tests, and a section justifying the architectural design decisions and domain separation.
 
 ## 9. Suggested Future Improvements
 
